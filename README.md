@@ -21,21 +21,21 @@ A Genshin Impact styled SDDM login theme for KDE Plasma, featuring animated vide
 
 ```
 ┌─────────────────────────────────────────────────┐
-│                 IDLE (welcome)                   │
+│                 IDLE (welcome)                  │
 │  Video background + centered music player       │
-│  ◀ ▶ switch tracks · Enter to continue          │
+│  ◀ ▶ switch tracks · Enter to continue        │
 └────────────────────┬────────────────────────────┘
                      │ Enter
                      ▼
 ┌─────────────────────────────────────────────────┐
-│                 DOOR (transition)                │
+│                 DOOR (transition)               │
 │  Door-opening animation · Music fades out       │
 │  Auto-advances when animation ends              │
 └────────────────────┬────────────────────────────┘
                      │ Auto
                      ▼
 ┌─────────────────────────────────────────────────┐
-│                 LOGIN (Breeze UI)                │
+│                 LOGIN (Breeze UI)               │
 │                                                 │
 │               12:34                             │
 │            Friday, April 18                     │
@@ -48,7 +48,7 @@ A Genshin Impact styled SDDM login theme for KDE Plasma, featuring animated vide
 │           └──────────────────┘                  │
 │                                                 │
 │  [⌨ Keyboard] [Session ▾]    [Sleep] [Reboot] [Shut Down] │
-│                            🎯 Fedora Logo       │
+│              🎯 Fedora Logo                     │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -88,7 +88,7 @@ The script will:
 
 2. Copy theme files:
    ```bash
-   sudo rsync -a --exclude='install.sh' --exclude='.git' --exclude='result*.png' \
+   sudo rsync -a --exclude='install.sh' --exclude='.git' \
        ./ /usr/share/sddm/themes/genshin-fedora/
    ```
 
@@ -302,4 +302,4 @@ sudo dnf install qt6-qtbase qt6-qtmultimedia qt6-qtquickcontrols2 qt6-qt5compat
 - Original [genshin-sddm-theme](https://github.com/nicefaa6waa/genshin-sddm-theme)
 - Genshin Impact OST by HOYO-MiX
 - Fedora KDE SIG
-# genshin-fedora
+
