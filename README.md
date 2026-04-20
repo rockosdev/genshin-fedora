@@ -296,3 +296,4 @@ sudo dnf install qt6-qtbase qt6-qtmultimedia qt6-qtquickcontrols2 qt6-qt5compat
 - Original [genshin-sddm-theme](https://github.com/nicefaa6waa/genshin-sddm-theme)
 - Genshin Impact OST by HOYO-MiX
 - Fedora KDE SIG
+# genshin-fedora
