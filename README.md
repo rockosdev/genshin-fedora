@@ -1,4 +1,10 @@
+
+
+
 # Genshin Fedora - SDDM Theme
+<img width="985" height="553" alt="image" src="https://github.com/user-attachments/assets/8cf9d2ce-b265-4b82-97c8-256bfc1c8ed4" />
+<img width="973" height="556" alt="image" src="https://github.com/user-attachments/assets/8784536a-29cf-4627-bb8a-cb98abb8fe39" />
+<img width="982" height="550" alt="image" src="https://github.com/user-attachments/assets/1ad57de0-23d9-42dd-b5ea-a74623ad8ea4" />
 
 A Genshin Impact styled SDDM login theme for KDE Plasma, featuring animated video backgrounds, an in-game music player, and a door-opening transition into the login screen.
 
