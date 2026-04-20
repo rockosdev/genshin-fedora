@@ -76,7 +76,7 @@ function installPackages {
             sudo pacman -S --needed qt6-base qt6-multimedia qt6-5compat gst-libav gst-plugins-base gst-plugins-good --overwrite '*'
             ;;
         "Fedora" )
-            sudo dnf install qt6-qtbase qt6-qtmultimedia qt6-qtquickcontrols2 gstreamer1-plugins-good gstreamer1-libav
+            sudo dnf install qt6-qtbase qt6-qtmultimedia qt6-qtquickcontrols2 qt6-qt5compat openh264 gstreamer1-plugin-openh264 gstreamer1-plugins-good gstreamer1-plugins-good-qt6 gstreamer1-libav
             ;;
         * )
             echo "Error: Invalid OS option"
@@ -118,13 +118,9 @@ function disableVirtualKeyboard {
 }
 
 function testTheme {
-    echo -e "\nDo you want to test the theme now?"
-    select sel in "Yes" "No"; do
-        case $sel in
-            Yes ) sddm-greeter --test-mode --theme $DIR; break;;
-            No ) exit;;
-        esac
-    done
+    echo -e "\nDone! Edit /etc/sddm.conf or /etc/sddm.conf.d/kde.conf:"
+    echo "  [Theme]"
+    echo "  Current=$NAME"
 }
 
 function createConfig {

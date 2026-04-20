@@ -74,7 +74,7 @@ FocusScope {
         id: bgOutput
         anchors.fill: parent
         fillMode: VideoOutput.PreserveAspectCrop
-        visible: !bgPlayer.failed
+        visible: !bgPlayer.failed && root.stage !== "login"
     }
 
     // ── Door Video ───────────────────────────────────────────
@@ -89,10 +89,13 @@ FocusScope {
             }
         }
         source: Qt.resolvedUrl("backgrounds/doorbg/" + timePeriod + "door.webm")
-        onMediaStatusChanged: {
-            if (mediaStatus === MediaPlayer.EndOfMedia && root.stage === "door") {
+        onPositionChanged: {
+            if (root.stage === "door" && duration > 0 && position >= duration - 50)
                 root.stage = "login"
-            }
+        }
+        onMediaStatusChanged: {
+            if (mediaStatus === MediaPlayer.EndOfMedia && root.stage === "door")
+                root.stage = "login"
         }
         videoOutput: doorOutput
         audioOutput: doorAudio
@@ -109,6 +112,10 @@ FocusScope {
         fillMode: VideoOutput.PreserveAspectCrop
         visible: root.stage === "door" && !doorPlayer.failed
         z: 1
+        layer.enabled: true
+        layer.effect: ShaderEffect {
+            fragmentShader: "backgrounds/doorbg/door_alpha.qsb"
+        }
     }
 
     // ── Login Background (doorbg/{period}_bg.png) ────────────
@@ -191,9 +198,8 @@ FocusScope {
             musicAudio.volume = 0
             doorPlayer.play()
         } else if (stage === "login") {
-            doorPlayer.stop()
-            bgPlayer.stop()
             musicPlayer.stop()
+            bgPlayer.stop()
         }
     }
 
@@ -339,6 +345,7 @@ FocusScope {
         onLoaded: {
             item.timePeriod = root.timePeriod
             opacity = 1
+            doorPlayer.stop()
         }
 
         Behavior on opacity {
