@@ -47,7 +47,7 @@ A Genshin Impact styled SDDM login theme for KDE Plasma, featuring animated vide
 │           │  Password        │                  │
 │           └──────────────────┘                  │
 │                                                 │
-│  [⌨ Keyboard] [Session ▾]    [Sleep] [Reboot] [Shut Down] │
+│        [Sleep] [Reboot] [Shut Down]             │
 │              🎯 Fedora Logo                     │
 └─────────────────────────────────────────────────┘
 ```
@@ -172,12 +172,12 @@ The idle background video (e.g. `nightbg.mp4`) shows the full Genshin scene. The
 
 ```
 ┌──────────────────────────────┐
-│  nightbg.mp4 (full scene)     │  ← bottom layer, z: 0
+│  nightbg.mp4 (full scene)    │  ← bottom layer, z: 0
 │                              │
 │     ┌────────────────┐       │
 │     │ nightdoor.webm │       │  ← overlay, z: 1
-│     │ (center door)   │       │     black → transparent
-│     │ black→transparent│       │     → background shows through
+│     │ (center door)   │      │     black → transparent
+│     │ black→transparent│     │     → background shows through
 │     └────────────────┘       │
 │                              │
 └──────────────────────────────┘
